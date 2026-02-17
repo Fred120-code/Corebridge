@@ -37,7 +37,7 @@ const Navbar = () => {
 
   //Login & Register Modal
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [isLoading, setIsloading] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean>(false);
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
@@ -119,8 +119,9 @@ const Navbar = () => {
             <button
               className=""
               onClick={() => {
-                setIsloading(true);
+                setIsLogin(true);
                 setShowModal(true);
+                setOpen(false);
               }}
             >
               <i
@@ -170,6 +171,103 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        {/**Login/Register Modal */}
+        {showModal && (
+          <div className=" fixed inset-0 h-screen flex items-center justify-center bg-black/80 backdrop-blur-sm">
+            <div
+              className=" relative bg-purple-100 border border-white rounded-xl p-10
+               w-[450px] md:x-[500px] shadow-2xl animate-fadeIn"
+            >
+              {/* Close */}
+              <button
+                className=" absolute top-5 right-5 text-4xl cursor-pointer text-black
+                    hover:text-(--prim) transition-all duration-300"
+                onClick={() => setShowModal(false)}
+              >
+                x
+              </button>
+
+              {/* Title */}
+              <h2 className="clash-font text-3xl font-semibold mb-8 text-black">
+                {isLogin ? "Login To Your Account" : "Register Your Account"}
+              </h2>
+
+              {/* Form */}
+              <form className="flex flex-col gap-4">
+                {!isLogin && (
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="w-full bg-gray-200/20 border border-black/20 text-black
+                      px-4 py-3 rounded-xl focus:outline-none focus:border-(--prim) transition-all"
+                  />
+                )}
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full bg-gray-200/20 border border-black/20 text-black
+                      px-4 py-3 rounded-xl focus:outline-none focus:border-(--prim) transition-all"
+                />
+                <input
+                  type="password"
+                  placeholder="Your Password"
+                  className="w-full bg-gray-200/20 border border-black/20 text-black
+                      px-4 py-3 rounded-xl focus:outline-none focus:border-(--prim) transition-all"
+                />
+
+                {/* Submit */}
+                <button
+                  className="w-full mt-3 bg-(--prim) text-white py-3 rounded-xl
+                font-semibold hover:bg-purple-600 transition-all cursor-pointer"
+                >
+                  {isLogin ? "Login Now" : "Register Now"}
+                </button>
+              </form>
+
+              {/* Auth */}
+              <p className="text-center text-sm mt-4 text-black font-semibold">
+                {isLogin ? (
+                  <>
+                    Don't have an accout{" "}
+                    <button
+                      type="button"
+                      className="text-(--prim) cursor-pointer hover:underline transition-all"
+                      onClick={() => setIsLogin(false)}
+                    >
+                      Register Here
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    Already have an accout{" "}
+                    <button
+                      type="button"
+                      className="text-(--prim) cursor-pointer hover:underline transition-all"
+                      onClick={() => setIsLogin(true)}
+                    >
+                      Login Here
+                    </button>
+                  </>
+                )}
+              </p>
+
+              {/* Footer */}
+              <p className="text-center text-sm mt-6 border-t border-white/10">
+                By signinp in or signing up to <strong>JoranFred</strong> you
+                agree to our{" "}
+                <Link href="/" className="text-(--prim) hover:underline">
+                  Term of use
+                </Link>{" "}
+                and
+                <Link href="/" className="text-(--prim) hover:underline">
+                  {" "}
+                  Privacy Policy
+                </Link>
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
