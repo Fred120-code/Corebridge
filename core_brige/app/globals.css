@@ -148,3 +148,34 @@ body{
         transform: rotate(160deg);
     }
 }
+
+
+/* Brands Css */
+.brands-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.brands-wrap:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 10;
+    pointer-events: none;
+}
+
+.brands-wrap:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 10;
+    pointer-events: none;
+}
