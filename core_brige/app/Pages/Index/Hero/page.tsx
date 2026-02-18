@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import HeroImg from "@/public/Images/Hero.webp";
 import clutchImg from "@/public/Images/clutch.svg";
@@ -78,8 +79,49 @@ const Hero = () => {
                   <div className="clutchImg">
                     <Image src={clutchImg} alt="clutchImg" />
                   </div>
-                  <div>
+                  <div className="arrowImg">
                     <Image src={arrowImg} alt="arrowImg" />
+                  </div>
+
+                  <div className="hero-info-wrap hidden md:block ">
+                    <div
+                      className="hero-info shadow-lg shadow-gray-200 bg-white p-6
+                    rounded-lg"
+                    >
+                      <div className="stars flex gap-1">
+                        <i className="bi bi-star-fill text-yellow-400"></i>
+                        <i className="bi bi-star-fill text-yellow-400"></i>
+                        <i className="bi bi-star-fill text-yellow-400"></i>
+                        <i className="bi bi-star-fill text-yellow-400"></i>
+                        <i className="bi bi-star-fill text-yellow-400"></i>
+                      </div>
+
+                      <p className=" tracking-wider text-gray-700 font-semibold syne">
+                        Trusted by 1 Million users
+                      </p>
+                    </div>
+
+                    <div className="hero-info shadow-lg shadow-gray-300 bg-white p-6 rounded-lg mt-3">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className="flex items-center justify-center rounded-xl
+                        text-3xl font-semibold border border-gray-300 px-4 py-2"
+                        >
+                          <CountUp
+                            start={0}
+                            end={5}
+                            duration={3}
+                            enableScrollSpy
+                            scrollSpyOnce
+                          />{" "}
+                          K
+                        </div>
+                        <div className="flex flex-col text-gray-700 font-semibold syne">
+                          <p>Happy</p>
+                          <p>Customers</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
