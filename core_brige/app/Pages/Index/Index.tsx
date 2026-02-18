@@ -1,7 +1,8 @@
-import React from 'react'
-import Hero from './Hero/page'
-import Brands from './Brands/page'
-import About from './About/page';
+"use client";
+import Hero from "./Hero/page";
+import Brands from "./Brands/page";
+import About from "./About/page";
+import Services from "./Services/page";
 
 const Index = () => {
   return (
@@ -9,8 +10,9 @@ const Index = () => {
       <Hero />
       <Brands />
       <About />
+      <Services />
     </>
   );
-}
+};
 
-export default Index
+export default Index;
