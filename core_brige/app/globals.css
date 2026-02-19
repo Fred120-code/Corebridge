@@ -342,8 +342,6 @@ body {
   box-shadow: 0 0 20px rgba(131, 131, 131, 0.4);
 }
 
-
-
 /* Testimonial Section */
 
 .test-card p,
@@ -354,7 +352,7 @@ body {
   animation-name: Fade-left;
   animation-duration: 0.7s;
   animation-timing-function: linear;
-  animation-fill-mode:forwards ;
+  animation-fill-mode: forwards;
   will-change: opacity, transform;
 }
 
@@ -377,10 +375,9 @@ body {
   }
 }
 
-
 /* Video Banner section */
 
-.video-banner{
+.video-banner {
   width: 100%;
   height: 90vh;
   display: flex;
@@ -390,4 +387,67 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/**Pricing  Section*/
+
+.Princing-wrap {
+  position: relative !important;
+}
+
+.Princing-wrap:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  border-radius: 50%;
+  background-color: var(--prim);
+  filter: blur(150px);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.Princing-wrap:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 700px;
+  border-radius: 50%;
+  background-color: var(--prim);
+  filter: blur(150px);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.pricing-box {
+  position: relative;
+}
+
+.pricing-box:after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background: var(--prim);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+
+/* Princing MQ Section */
+@media (max-width:600px){
+  .Princing-wrap:after{
+    width: 100%;
+    height: 100%;
+  }
 }
