@@ -71,7 +71,7 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-40 md:-bottom-10 left-10 lg:-left-20">
+                <div className="absolute -bottom-40 md:-bottom-10 -left-10 lg:-left-20">
                   <div className="w-1/2 rounded-2xl bg-white/50 border border-white p-3">
                     <div className="rounded-2xl bg-white shadow-lg shadow-gray-300 p-5">
                       <h2 className=" text-3xl font-semibold">
