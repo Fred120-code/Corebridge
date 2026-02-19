@@ -376,3 +376,18 @@ body {
     opacity: 1;
   }
 }
+
+
+/* Video Banner section */
+
+.video-banner{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../public/Images/video-bg.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -5,6 +5,7 @@ import About from "./About/page";
 import Services from "./Services/page";
 import History from "./History/page";
 import Testimonials from "./Testimonials/page";
+import VideoBanner from "./VideoBanner/page";
 
 const Index = () => {
   return (
@@ -14,7 +15,8 @@ const Index = () => {
       <About />
       <Services />
       <History />
-      <Testimonials/>
+      <Testimonials />
+      <VideoBanner />
     </>
   );
 };
