@@ -34,7 +34,10 @@ const HistoryData = [
 const History = () => {
   return (
     <>
-      <div className="px-[8%] lg:px-[16%] py-10 md:py-20 lg:py-30 relative">
+      <section
+        className="px-[8%] lg:px-[16%] py-10 md:py-20 lg:py-30 relative"
+        id="history"
+      >
         <Image
           src={sectionBG}
           alt="sectionBG"
@@ -88,7 +91,7 @@ const History = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

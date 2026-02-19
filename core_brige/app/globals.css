@@ -339,5 +339,5 @@ body {
 /* History section CSS */
 
 .history-card {
-  
+  box-shadow: 0 0 20px rgba(131, 131, 131, 0.4);
 }
