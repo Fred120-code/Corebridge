@@ -308,36 +308,71 @@ body {
   animation: Anim-btn-rotate 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes Anim-btn-rotate{
-    0%{
-        transform: rotateX(0deg) translateY(0);
-        opacity: 1;
-    }
-    40%{
-        transform: rotateX(90deg) translateY(-10px);
-        opacity: 0;
-    }
-    60%{
-        transform: rotateX(-90deg) translateY(10px);
-        opacity: 0;
-    }
-    100%{
-        transform: rotateX(0deg) translateY(0);
-        opacity: 1;
-    }
+@keyframes Anim-btn-rotate {
+  0% {
+    transform: rotateX(0deg) translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: rotateX(90deg) translateY(-10px);
+    opacity: 0;
+  }
+  60% {
+    transform: rotateX(-90deg) translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg) translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Service MQ Section */
 
-@media (max-widht: 600px){
-    .services-wrap:after{
-        width: 100%;
-        height: 100%;
-    }
+@media (max-widht: 600px) {
+  .services-wrap:after {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /* History section CSS */
 
 .history-card {
   box-shadow: 0 0 20px rgba(131, 131, 131, 0.4);
+}
+
+
+
+/* Testimonial Section */
+
+.test-card p,
+.test-card h1,
+.test-card h5 {
+  opacity: 0;
+  transform: translateX(100px);
+  animation-name: Fade-left;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards ;
+  will-change: opacity, transform;
+}
+
+.test-card h1 {
+  animation-delay: 0.2s;
+}
+
+.test-card h5 {
+  animation-delay: 0.4s;
+}
+
+@keyframes Fade-left {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
