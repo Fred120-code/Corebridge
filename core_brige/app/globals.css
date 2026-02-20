@@ -443,11 +443,42 @@ body {
   z-index: -1;
 }
 
-
 /* Princing MQ Section */
-@media (max-width:600px){
-  .Princing-wrap:after{
+@media (max-width: 600px) {
+  .Princing-wrap:after {
     width: 100%;
     height: 100%;
+  }
+}
+
+/** Marquee Text Section*/
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+
+.marquee-item{
+  display: flex;
+  align-items: center;
+  gap: 12xp;
+  padding: 0 30px;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
   }
 }
