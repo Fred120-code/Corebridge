@@ -1,0 +1,174 @@
+"use client";
+import Image from "next/image";
+import Blog1 from "@/public/Images/blog-1.jpg";
+import Blog2 from "@/public/Images/blog-2.jpg";
+import Blog3 from "@/public/Images/blog-3.jpg";
+import Blog4 from "@/public/Images/blog-4.jpg";
+import Blog5 from "@/public/Images/blog-5.jpg";
+import Blog6 from "@/public/Images/blog-6.jpg";
+import Blog7 from "@/public/Images/blog-7.jpg";
+import Blog8 from "@/public/Images/blog-8.jpg";
+import Blog9 from "@/public/Images/blog-9.jpg";
+import { useState } from "react";
+
+const BlogsData = [
+  {
+    id: 1,
+    img: Blog1,
+    tag: "Business",
+    date: "November 28, 2026",
+    title: "Fueling Business Dreams With Digital Power",
+    desc: "Before you can grow your presence online, you need to your brand standsfor good vibe.",
+  },
+  {
+    id: 2,
+    img: Blog2,
+    tag: "Business",
+    date: "November 27, 2026",
+    title: "Top Trend Shaping Digital Marketing in 2026",
+    desc: "The future of digital marketing is here. experiences, and data analytics.",
+  },
+  {
+    id: 3,
+    img: Blog3,
+    tag: "Business",
+    date: "November 25, 2026",
+    title: "Why Most Software Projects Fail-How Agencies Prevent It",
+    desc: "At the heart of every business dream experiences lies the power.",
+  },
+  {
+    id: 4,
+    img: Blog4,
+    tag: "Business",
+    date: "November 23, 2026",
+    title: "A Complete Guide to Creating Your Digital Presenc",
+    desc: "Your Blueprint to Shine in the Digital World is more.",
+  },
+  {
+    id: 5,
+    img: Blog5,
+    tag: "Business",
+    date: "November 21, 2026",
+    title: "Color as a Defining Element of Brand Identity",
+    desc: "Choosing the right digital agency is one of the most.",
+  },
+  {
+    id: 6,
+    img: Blog6,
+    tag: "Business",
+    date: "November 19, 2026",
+    title: "The Power of Data-Driven Marketing for Growth",
+    desc: "The power of data-driven marketing lies in its ability to.",
+  },
+  {
+    id: 7,
+    img: Blog7,
+    tag: "Business",
+    date: "November 16, 2026",
+    title: "How to Choose the Right Digital Agency for Your",
+    desc: "The power of data-driven marketing lies in its ability to.",
+  },
+  {
+    id: 8,
+    img: Blog8,
+    tag: "Business",
+    date: "November 15, 2026",
+    title: "Your Blueprint to Shine in the Digital World",
+    desc: "The power of data-driven marketing lies in its ability to.",
+  },
+  {
+    id: 9,
+    img: Blog9,
+    tag: "Business",
+    date: "November 12, 2026",
+    title: "Digital Marketing as the Catalyst for Success",
+    desc: "The power of data-driven marketing lies in its ability to.",
+  },
+];
+
+const Blogs = () => {
+  const [showAll, setShowAll] = useState(false);
+  return (
+    <div>
+      <section className="px-[8%] lg:px-[16%] py-10 lg:py-30" id="blogs">
+        <div className="flex flex-col items-center">
+          <div className="title text-center w-full lg:w-[50%]">
+            <h5 className="syne text-2xl">( OUR BLOG )</h5>
+            <h1 className="syne font-extrabold text-6xl marker:text-6xl">
+              READ OUR LATEST ARTICLES{" "}
+            </h1>
+          </div>
+        </div>
+
+        {/* Blogs Cards */}
+        <div className="mt-20 md:mt-30 Blogs-wrap">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {(showAll ? BlogsData : BlogsData.slice(0, 6)).map((blog) => (
+              <div
+                key={blog.id}
+                className=" flex bg-white/30 border border-white p-4 shadow-lg 
+                    shadow-gray-200 flex-col rounded-lg"
+              >
+                <div
+                  className="group flex flex-col cursor-pointer shadow-lg shadow-gray-300
+                    rounded-2xl overflow-hidden w-full"
+                >
+                  <div className="rounded-2xl overflow-hidden">
+                    <Image
+                      src={blog.img}
+                      alt="blog.img"
+                      className="w-full h-full rounded-2xl group-hover:scale-105
+                          transition-all duration-300"
+                    />
+                  </div>
+                  <div className="p-6 pb-2 bg-white/70 blog-box">
+                    <div className="flex items-center gap-2">
+                      <span className="text-gray-700">{blog.tag}</span>
+                      <span className="text-xl">•</span>
+                      <span className="text-gray-700">{blog.date}</span>
+                    </div>
+                    <h1
+                      className="syne text-2xl font-semibold my-2 hover:text-(--prim) 
+                    transition-all duration-300"
+                    >
+                      {blog.title}
+                    </h1>
+                    <p className=" tracking-wide">{blog.desc}</p>
+                    <button className="mt-5 w-full">
+                      <div
+                        className="btn bg-white/20 backdrop-blur-xl text-xl
+                        px-6 py-3 rounded-xl mb-5 border border-black/30
+                         transition-all duration-300 cursor-pointer"
+                      >
+                        <div className="btn-text">
+                          Learn More
+                          <i className="bi bi-arrow-right ps-2"></i>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="w-full flex justify-center items-center mt-12">
+            <button onClick={() => setShowAll(!showAll)}>
+              <div
+                className="btn bg-black text-white text-xl px-6 py-3 rounded-xl
+          mb-5 border border-black/30 transition-all duration-300 cursor-pointer"
+              >
+                <div className="btn-text">
+                  {showAll ? "Show Less" : "Show More"}
+                  <i className="bi bi-arrow-right ps-2"></i>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Blogs;

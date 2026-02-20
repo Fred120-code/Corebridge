@@ -8,6 +8,7 @@ import Testimonials from "./Testimonials/page";
 import VideoBanner from "./VideoBanner/page";
 import Pricing from "./Pricing/page";
 import MarqueeText from "./MarqueeText/page";
+import Blogs from "./Blogs/page";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <VideoBanner />
       <Pricing />
       <MarqueeText />
+      <Blogs />
     </>
   );
 };
