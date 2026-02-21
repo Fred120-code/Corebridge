@@ -74,7 +74,7 @@ const Navbar = () => {
     <>
       {/**Navbar */}
       <div
-        className={` px-[8%] lg:px[10%] fixed top-0 w-[400px] z-50 left-0 navbar transition-all
+        className={` px-[8%] lg:px[10%] fixed top-0  md:w-full w-[400px] z-50 left-0 navbar transition-all
            duration-300 ${
              scrolled
                ? "bg-white backdrop-blur-md shadow-lg px-[8%] lg:px-[16%]"
@@ -150,7 +150,7 @@ const Navbar = () => {
 
           {/**Mobile menu */}
           <div
-            className={`lg:hidden fixed top-[60px] bg-white left-0 w-[400px] z-50 transition-all duration-300
+            className={`lg:hidden fixed top-[60px] bg-white left-0 md:w-full w-[400px]  z-50 transition-all duration-300
             ${open ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-6"}`}
           >
             <div className="mx-[5%] rounded-2xl shadow-2xl border border-white/10">
