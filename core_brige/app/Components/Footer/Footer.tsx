@@ -1,95 +1,60 @@
 import Link from "next/link";
 import React from "react";
 
-interface Props {
+interface LinkItem {
   id: number;
   title: string;
   href: string;
 }
 
-const UsefulfooterLinks: Props[] = [
+interface FooterSection {
+  id: number;
+  title: string;
+  links: LinkItem[];
+}
+
+const FOOTER_LINKS_DATA: FooterSection[] = [
   {
     id: 1,
-    title: "About",
-    href: "#about",
+    title: "Useful links",
+    links: [
+      { id: 1, title: "About", href: "#about" },
+      { id: 2, title: "Services", href: "#services" },
+      { id: 3, title: "Pricing", href: "#pricing" },
+      { id: 4, title: "Blogs", href: "#blogs" },
+      { id: 5, title: "Faq's", href: "#faqs" },
+    ],
   },
   {
     id: 2,
-    title: "Services",
-    href: "#services",
+    title: "Our Company",
+    links: [
+      { id: 1, title: "Our Story", href: "/" },
+      { id: 2, title: "News Article", href: "/" },
+      { id: 3, title: "Terms of Services", href: "/" },
+      { id: 4, title: "Case Study", href: "/" },
+      { id: 5, title: "Privacy Policy", href: "/" },
+    ],
   },
   {
     id: 3,
-    title: "Pricing",
-    href: "#pricing",
-  },
-  {
-    id: 4,
-    title: "Blogs",
-    href: "#blogs",
-  },
-  {
-    id: 5,
-    title: "Faq's",
-    href: "#faqs",
+    title: "Follow Us",
+    links: [
+      { id: 1, title: "Facebook", href: "/" },
+      { id: 2, title: "Twitter", href: "/" },
+      { id: 3, title: "Dribble", href: "/" },
+      { id: 4, title: "Instagram", href: "/" },
+      { id: 5, title: "Pinterest", href: "/" },
+    ],
   },
 ];
 
-const OurCompanyFooterLink = [
-  {
-    id: 1,
-    title: "Our Story",
-    href: "/",
-  },
-  {
-    id: 2,
-    title: "News Article",
-    href: "/",
-  },
-  {
-    id: 3,
-    title: "Terms of Services",
-    href: "/",
-  },
-  {
-    id: 4,
-    title: "Case Study",
-    href: "/",
-  },
-  {
-    id: 5,
-    title: "Privacy Policy",
-    href: "/",
-  },
+const FOOTER_BOTTOM_LINKS: LinkItem[] = [
+  { id: 1, title: "TERMS & CONDITIONS", href: "/" },
+  { id: 2, title: "PRIVACY POLICY", href: "/" },
+  { id: 3, title: "SECURITY", href: "/" },
 ];
 
-const FollowUsFooterLink = [
-  {
-    id: 1,
-    title: "Facebook",
-    href: "/",
-  },
-  {
-    id: 2,
-    title: "Twitter",
-    href: "/",
-  },
-  {
-    id: 3,
-    title: "Dribble",
-    href: "/",
-  },
-  {
-    id: 4,
-    title: "Instagram",
-    href: "/",
-  },
-  {
-    id: 5,
-    title: "Pinterest",
-    href: "/",
-  },
-];
 const Footer = () => {
   return (
     <>
@@ -103,59 +68,26 @@ const Footer = () => {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 
                 gap-10 lg:gap-5"
             >
-              <div className="footer-col">
-                <h2 className="text-3xl tracking-wide mb-5">Useful links</h2>
+              {FOOTER_LINKS_DATA.map((section) => (
+                <div key={section.id} className="footer-col">
+                  <h2 className="text-3xl tracking-wide mb-5">
+                    {section.title}
+                  </h2>
 
-                <div className=" flex flex-col gap-2">
-                  {UsefulfooterLinks.map((item, index) => (
-                    <Link
-                      href={item.href}
-                      key={item.id}
-                      className="text-xl text-gray-800 hover:text-(--prim) hover:ps-1
+                  <div className=" flex flex-col gap-2">
+                    {section.links.map((item) => (
+                      <Link
+                        href={item.href}
+                        key={item.id}
+                        className="text-xl text-gray-800 hover:text-(--prim) hover:ps-1
                     transition-all duration-200"
-                    >
-                      {" "}
-                      {item.title}
-                    </Link>
-                  ))}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              <div className="footer-col">
-                <h2 className="text-3xl tracking-wide mb-5">Our Company</h2>
-
-                <div className=" flex flex-col gap-2">
-                  {OurCompanyFooterLink.map((item, index) => (
-                    <Link
-                      href={item.href}
-                      key={item.id}
-                      className="text-xl text-gray-800 hover:text-(--prim) hover:ps-1
-                    transition-all duration-200"
-                    >
-                      {" "}
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <div className="footer-col">
-                <h2 className="text-3xl tracking-wide mb-5">Follow Us</h2>
-
-                <div className=" flex flex-col gap-2">
-                  {FollowUsFooterLink.map((item, index) => (
-                    <Link
-                      href={item.href}
-                      key={item.id}
-                      className="text-xl text-gray-800 hover:text-(--prim) hover:ps-1
-                    transition-all duration-200"
-                    >
-                      {" "}
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              ))}
 
               <div className="footer-col">
                 <h2 className="text-3xl tracking-wide mb-5">Contact Info</h2>
@@ -189,24 +121,15 @@ const Footer = () => {
                 </Link>{" "}
               </p>
               <div className=" flex flex-wrap justify-center items-center gap-3 lg:gap-8">
-                <Link
-                  href="/"
-                  className=" text-xl text-gray-800 hover:text-(--prim) hover:-translate-y-1 transition-all duration-200"
-                >
-                  TERMS & CONDITIONS
-                </Link>
-                <Link
-                  href="/"
-                  className=" text-xl text-gray-800 hover:text-(--prim) hover:-translate-y-1 transition-all duration-200"
-                >
-                  PRIVACY POLICY
-                </Link>
-                <Link
-                  href="/"
-                  className=" text-xl text-gray-800 hover:text-(--prim) hover:-translate-y-1 transition-all duration-200"
-                >
-                  SECURITY
-                </Link>
+                {FOOTER_BOTTOM_LINKS.map((link) => (
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    className=" text-xl text-gray-800 hover:text-(--prim) hover:-translate-y-1 transition-all duration-200"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
