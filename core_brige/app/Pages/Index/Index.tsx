@@ -10,6 +10,7 @@ import Pricing from "./Pricing/page";
 import MarqueeText from "./MarqueeText/page";
 import Blogs from "./Blogs/page";
 import Faqs from "./Faqs/page";
+import GetInTouch from "./GetInTouch/page";
 
 const Index = () => {
   return (
@@ -25,6 +26,7 @@ const Index = () => {
       <MarqueeText />
       <Blogs />
       <Faqs />
+      <GetInTouch />
     </>
   );
 };
